@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KARAM | أدوات ذكية</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #f4f4f4; color: #333; }
+    header { background: #2c3e50; color: #fff; padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 10; }
+    nav { background: #34495e; padding: 0.5rem; text-align: center; }
+    nav a { color: white; text-decoration: none; margin: 0 1rem; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .hero { background: url('https://images.unsplash.com/photo-1559027615-cdcbcbf4b05f') center/cover; height: 250px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; text-shadow: 1px 1px 5px #000; }
+    main { padding: 2rem; }
+    .card { background: white; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .search-bar { margin-bottom: 1rem; }
+    input[type="text"] { padding: 0.5rem; width: 100%; border: 1px solid #ccc; border-radius: 5px; }
+    footer { background: #2c3e50; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
+    .lang { margin-top: 1rem; text-align: center; }
+    .lang button { padding: 0.5rem 1rem; margin: 0.2rem; border: none; border-radius: 5px; background: #3498db; color: white; cursor: pointer; }
+    .lang button:hover { background: #2980b9; }
+    .login-box { text-align: center; margin-bottom: 2rem; }
+    .login-box button { padding: 0.6rem 1.2rem; background: #e67e22; border: none; color: white; border-radius: 5px; margin: 0.2rem; cursor: pointer; }
+    .login-box button:hover { background: #d35400; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>KARAM | موقع الذكاء والمساعدة</h1>
+  </header>
+  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#services">الخدمات</a>
+    <a href="#counter">عداد الكلمات</a>
+    <a href="#members">المشتركين</a>
+  </nav>
+
+  <div class="hero">
+    <p>مرحباً بك في KARAM - أدوات ذكية لتحسين تجربتك</p>
+  </div>
+
+  <main>
+    <div class="login-box">
+      <p>قم بتسجيل الدخول للوصول الكامل إلى الخدمات:</p>
+      <button>تسجيل الدخول بواسطة Google</button>
+      <button>إنشاء حساب</button>
+      <button>الدخول كزائر</button>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="ابحث في الموقع...">
+    </div>
+
+    <section id="services" class="card">
+      <h2>الخدمات</h2>
+      <ul>
+        <li>تحليل النصوص</li>
+        <li>ترجمة ذكية</li>
+        <li>تلخيص المحتوى</li>
+        <li>تحويل النص إلى صوت</li>
+        <li>دردشة ذكاء صناعي</li>
+        <li>تحليل مشاعر النص</li>
+      </ul>
+    </section>
+
+    <section id="counter" class="card">
+      <h2>عداد الكلمات</h2>
+      <textarea id="textInput" rows="6" placeholder="اكتب نصك هنا..." style="width:100%; margin: 1rem 0;"></textarea>
+      <p>عدد الكلمات: <span id="wordCount">0</span></p>
+      <script>
+        const input = document.getElementById('textInput');
+        const count = document.getElementById('wordCount');
+        input.addEventListener('input', () => {
+          const words = input.value.trim().split(/\s+/);
+          count.textContent = input.value.trim() === '' ? 0 : words.length;
+        });
+      </script>
+    </section>
+
+    <section id="members" class="card">
+      <h2>المشتركين</h2>
+      <p>انضم لمجتمع KARAM وكن جزءاً من المستقبل.</p>
+      <button>انضم الآن</button>
+    </section>
+
+    <div class="lang">
+      <p>اختر لغتك:</p>
+      <button onclick="translate('ar')">العربية</button>
+      <button onclick="translate('en')">English</button>
+      <button onclick="translate('fr')">Français</button>
+    </div>
+    <script>
+      function translate(lang) {
+        alert("ميزة الترجمة ستُضاف لاحقاً. اللغة المختارة: " + lang);
+      }
+    </script>
+  </main>
+
+  <footer>
+    <p>جميع الحقوق محفوظة &copy; 2025 KARAM</p>
+  </footer>
+</body>
+</html>
